@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>url shortener</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href=".././style.css">
+  </head>
+  <body>
+  <h4>url shrinker</h4>
+  <form class="" action="/" method="post">
+    <label for=""><input type="text" name="fullUrl" id="fullUrl"></label>
+    <button type="submit" name="button">shrink</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>fullurl</th>
+          <th>short url</th>
+          <th>clicks</th>
+          <th>copy</th>
+          <th>settings <i class="fas fa-cogs settings"></i></th>
+          </tr>
+      </thead>
+
+      <tbody>
+        <% shortUrls.forEach((shortUrl) => {%>
+          <tr class="par">
+            <td class="full"><a href="<%= shortUrl.full %>">
+              <%= shortUrl.full %></a></td>
+              <% i = 0 %>
+            <td><a href="<%= shortUrl.short %>" class="copy<% i++ %>">
+              <%= shortUrl.short %></a></td>
+            <td><%= shortUrl.clicks %></td>
+            <td><a href="#" class="cop(.copy<% i++ %>)"><i class="fas fa-copy"></i></a></td>
+            <td><a href="#"><i class="fa fa-trash" aria-hidden="true" ></i></a></td>
+            </tr>
+          <% }) %>
+
+       <td><a href="http://localhost:3000/">http://localhost:3000/</a></td>
+       <td><a href="//localhost">localhost</a></td>
+       <td>10</td>
+      </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="script.js" ></script>
+  </body>
+</html>
